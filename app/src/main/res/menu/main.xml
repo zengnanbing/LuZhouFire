@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity" >
+
+
+    <item
+        android:id="@+id/ab_search"
+        android:orderInCategory="80"
+        android:title="action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/normal"
+        android:orderInCategory="100"
+        android:title="普通地图"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/satelite"
+        android:orderInCategory="100"
+        android:title="卫星地图"
+        app:showAsAction="collapseActionView"/>
+
+
+    <item
+        android:id="@+id/traffic_on"
+        android:orderInCategory="100"
+        android:title="实时交通(开)"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/traffic_off"
+        android:orderInCategory="100"
+        android:title="实时交通(关)"
+        app:showAsAction="collapseActionView"/>
+
+</menu>

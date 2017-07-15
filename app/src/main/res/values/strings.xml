@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">警政助手</string>
+    <string name="drawer_open">打开</string>
+    <string name="drawer_close">关闭</string>
+    <string name="type_table1">日常记录表</string>
+    <string name="type_table2">隐患报告书</string>
+    <string name="type_table3">举报投诉表</string>
+    <string name="type_table4">移交书</string>
+    <string name="type_table5">营业前记录表</string>
+</resources>

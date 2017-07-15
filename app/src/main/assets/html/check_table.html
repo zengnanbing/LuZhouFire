@@ -1,0 +1,178 @@
+
+<html>
+
+<head>
+<base href="<%=basePath%>">
+<title></title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,user-scalable=no"
+	name="viewport">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/localStorage.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/tablehead.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+<script type="text/javascript">
+	function getUnit(policestation, unitid, title, address, master, userid) {
+		$("#header_policestation").innerHTML = (policestation);
+		$("#unitid").val(unitid);
+		$("#unitname").val(title);
+		$("#address").val(address);
+		$("#master").val(master);
+		$("#userid").val(userid);
+	}
+	window.onload = function() //用window的onload事件，窗体加载完毕的时候
+	{
+		$("input:radio").click(function() {
+			var checkedState = $(this).attr('checked'); //记录当前选中状态  
+			$(this).attr('checked', true); //2.  
+			if (checkedState == 'checked') {
+				$(this).attr('checked', false); //3.  
+			}
+		});
+	}
+</script>
+</head>
+
+<body>
+	<div class="container-fluid table-responsive">
+		<form id="checktable">
+			<div class="header">
+				<input id="userid" name="userid" type="hidden"> <input
+					name="tableType" value="营业前检查表" type="hidden" />
+				<div class="header_policestation"></div>
+				<div class="header_title">乡村酒店 、农家乐营业前消防监督检查记录</div>
+				<div class="header_number">
+					编号：[ <input id="unitid" name="unitid" class="input_number"
+						disabled="disabled" style="width:30px;">]第 <input id="id"
+						name="recordid" class="input_number" disabled="disabled"
+						style="width: 115px;">号
+					<script type="text/javascript" src="../js/date.js"></script>
+					<script type="text/javascript">
+						var id = $("#id").val();
+						window.android.getFormId(id);
+						window.android.takePhoto(id);
+						window.android.sign(id);
+					</script>
+				</div>
+			</div>
+			<hr />
+			<ol>
+				<li>场所名称<input type="text" name="unitname"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+				<li>法定代表人/主要负责人<input type="text" name="master"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+				<li>地址<input type="text" name="address"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+				<li>联系电话<input type="text" name="telphone"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+				<li>建筑结构<input type="text" name="buildingstructure"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+				<li>所在建筑高度(m)<input type="text" name="height"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+				<li>使用层数<input type="text" name="floors"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+				<li>建筑所建面积(㎡)<input type="text" name="area"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+				<li>房间数(间)<input type="text" name="rooms"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+				<li>床位数(张)<input type="text" name="bed"
+					style="width:100%;height:6%;border:none">
+				<hr /></li>
+			</ol>
+			<big><strong>检查内容和情况记录</strong></big>
+			<ol>
+				<li>消防安全管理制度： <input type="radio" name="securitysystem"
+					value="0" id="securitysystem0" onclick="chkRadio(this)"> <label
+					for="securitysystem0">有</label> <input type="radio"
+					name="securitysystem" value="1" id="securitysystem1"
+					onclick="chkRadio(this)"> <label for="securitysystem1">没有</label>
+					<hr />
+				</li>
+				<li>灭火与应急疏散预案： <input type="radio" name="transportationplan"
+					value="0" id="transportationplan0" onclick="chkRadio(this)">
+					<label for="transportationplan0">有</label> <input type="radio"
+					name="transportationplan" value="1" id="transportationplan1"
+					onclick="chkRadio(this)"> <label for="transportationplan1">没有</label>
+					<hr />
+				</li>
+				<li>消防安全承诺书 <input type="radio" name="securityletter" value="0"
+					id="securityletter0" onclick="chkRadio(this)"> <label
+					for="securityletter0">有</label> <input type="radio"
+					name="securityletter" value="1" id="securityletter1"
+					onclick="chkRadio(this)"> <label for="securityletter1">没有</label>
+					<hr />
+				</li>
+				<li>安全出口及疏散通道丶楼梯<br>数量：<input type="text" name="export"
+					style="width:1%;height:5%;border:none">(个) 宽度：<input
+					type="text" name="width" style="width:1%;height:5%;border:none">(m)楼梯形式：<input
+					type="text" name="staircase"
+					style="width:10%;height:5%;border:none">
+					<hr />
+				</li>
+				<li>疏散门是否采用平开门并向疏散方向开启<br> <input type="radio"
+					name="egreedoor" value="0" id="egreedoor0" onclick="chkRadio(this)">
+					<label for="egreedoor0">是</label> <input type="radio"
+					name="egreedoor" value="1" id="egreedoor1" onclick="chkRadio(this)">
+					<label for="egreedoor1">否</label>
+					<hr />
+				</li>
+				<li>外墙门窗、 阳台是否设置影响逃生和灭火救援的金属栅栏<br> <input type="radio"
+					name="fence" value="0" id="fence0" onclick="chkRadio(this)">
+					<label for="fence0">是</label> <input type="radio" name="fence"
+					value="1" id="fence1" onclick="chkRadio(this)"> <label
+					for="fence1">否</label>
+					<hr />
+				</li>
+				<li>应急照明及疏散指示 <br> 应急照明：<input type="text"
+					name="emergencylight" style="width:1%;height:6%;border:none">(具)
+					疏散标志：<input type="text" name="sign"
+					style="width:1%;height:6%;border:none"> (个)
+					<hr />
+				</li>
+				<li>灭火器配置：<input type="text" name="extinguisher"
+					style="width:1%;height:6%;border:none"> (具)
+					<hr />
+				</li>
+				<li>室内装饰装修材料：<input type="text" name="decorativematerial"
+					style="width:100%;height:6%;border:none">
+					<hr />
+				</li>
+				<li>电气线路敷设： <input type="text" name="line"
+					style="width:100%;height:6%;border:none">
+					<hr />
+				</li>
+				<li>其他： <input type="text" name="other"
+					style="width:100%;height:6%;border:none">
+					<hr />
+				</li>
+			</ol>
+			<p align="right">
+				检查民警(签名)：<input type="text" size="8" name="policemansign"
+					style="border-color:#000000;border-style:solid;border-top-width:0px;border-right-width:0px;border-bottom-width:1px;border-left-width:0px;">
+			</p>
+			<p align="right">
+				场所随同检查人员(签名)：<input type="text" size="8" name="inspectorsign"
+					style="border-color:#000000;border-style:solid;border-top-width:0px;border-right-width:0px;border-bottom-width:1px;border-left-width:0px;">
+			</p>
+			<p>此记录由公安派出所存档 ,并报当地公安机关消防机构备案。</p>
+			<hr />
+			<div style="text-align:right;">
+				<button type="button" class="btn btn-primary"
+					onclick="saveSettings()">保存</button>
+			</div>
+		</form>
+		<script type="text/javascript" src="../js/date.js"></script>
+	</div>
+</body>
+
+</html>

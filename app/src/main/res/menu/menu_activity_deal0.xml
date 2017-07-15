@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DealActivity" >
+
+    <item
+        android:orderInCategory="100"
+        android:title="历史记录"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:orderInCategory="100"
+        android:title="日常记录表"
+        app:showAsAction="collapseActionView"/>
+    <item
+        android:orderInCategory="100"
+        android:title="隐患报告书"
+        app:showAsAction="never"/>
+    <item
+        android:orderInCategory="100"
+        android:title="营业前记录表"
+        app:showAsAction="never"/>
+
+</menu>

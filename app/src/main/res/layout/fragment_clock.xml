@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+     <widget.CircleImageView
+        android:id="@+id/head_photo"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/slidingToast"
+        android:layout_centerHorizontal="true"
+        app:border_color="@color/light"
+        app:border_width="2dp"
+        android:src="@mipmap/default_headphoto"/>
+    <TextView
+        android:id="@+id/slidingToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/clock"
+        android:layout_marginTop="20dp"
+        android:text="请绘制图案"
+        android:textColor="#f52121"
+        android:textSize="16sp" />
+
+    <widget.GestureLockView
+        android:id="@+id/clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"/>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/clockbottom"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="30dp"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:text="忘记手势密码" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="0.5dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:background="#5000"></TextView>-->
+
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="用其他账号登录" />&ndash;&gt;-->
+
+    <!--</LinearLayout>-->
+
+</RelativeLayout>
