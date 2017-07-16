@@ -5,19 +5,30 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?attr/colorPrimary"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="用户注册"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <include layout="@layout/widget_loading" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/head" />
-
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -32,18 +43,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:background="@color/white"
-                android:hint="姓名" />
+                android:hint="姓名"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <View
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
             android:background="#42000000" />
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="center_vertical"
@@ -52,7 +64,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/log2" />
+                android:src="@mipmap/reg_police_num" />
 
             <EditText
                 android:id="@+id/police_number"
@@ -61,18 +73,18 @@
                 android:layout_marginLeft="10dp"
                 android:background="@color/white"
                 android:hint="警号"
-                android:inputType="textPassword" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <View
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
             android:background="#42000000" />
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="center_vertical"
@@ -81,7 +93,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/log2" />
+                android:src="@mipmap/reg_phone_num" />
 
             <EditText
                 android:id="@+id/phone_number"
@@ -90,18 +102,18 @@
                 android:layout_marginLeft="10dp"
                 android:background="@color/white"
                 android:hint="电话号码"
-                android:inputType="textPassword" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <View
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
             android:background="#42000000" />
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="center_vertical"
@@ -119,18 +131,19 @@
                 android:layout_marginLeft="10dp"
                 android:background="@color/white"
                 android:hint="密码"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <View
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
             android:background="#42000000" />
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="center_vertical"
@@ -148,38 +161,33 @@
                 android:layout_marginLeft="10dp"
                 android:background="@color/white"
                 android:hint="确认密码"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <View
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
             android:background="#42000000" />
 
-        <LinearLayout
-            android:layout_width="200dp"
+        <Spinner
+            android:id="@+id/policid"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:entries="@array/policeStation">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="派出所：" />
+        </Spinner>
 
-            <Spinner
-                android:id="@+id/policid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp">
+        <View
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#42000000" />
 
-            </Spinner>
 
-        </LinearLayout>
         <!--<LinearLayout-->
         <!--android:layout_width="200dp"-->
         <!--android:layout_height="wrap_content"-->
@@ -204,7 +212,7 @@
         <!--</LinearLayout>-->
 
         <Button
-            android:id="@+id/but_login"
+            android:id="@+id/but_register"
             android:layout_width="200dp"
             android:layout_height="35dp"
             android:layout_marginTop="35dp"
@@ -213,7 +221,5 @@
             android:textColor="#fff"
             android:textSize="16sp" />
     </LinearLayout>
-
-    <include layout="@layout/widget_loading" />
 
 </merge>

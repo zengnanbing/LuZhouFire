@@ -82,7 +82,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Logger.d("注册1");
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivityForResult(intent, REQUEST_REGISTER);
             }

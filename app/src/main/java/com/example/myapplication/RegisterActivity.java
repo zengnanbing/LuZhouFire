@@ -21,9 +21,7 @@ import java.util.List;
 
 import JavaBean.PoliceStationInfo;
 import Utils.OKCall;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+
 import okhttp3.Call;
 
 import static JavaBean.UrlNet.POLICE_STATION;
@@ -32,21 +30,14 @@ import static JavaBean.UrlNet.REGISTER;
 public class RegisterActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.username)
+
     EditText username;
-    @BindView(R.id.police_number)
     EditText policeNumber;
-    @BindView(R.id.phone_number)
     EditText phoneNumber;
-    @BindView(R.id.password)
     EditText passWord1;
-    @BindView(R.id.password2)
     EditText passWord2;
-    @BindView(R.id.policid)
     Spinner spinner;
-    @BindView(R.id.but_login)
-    Button butLogin;
-    @BindView(R.id.loadingview)
+    Button butRegiet;
     ProgressView loadingview;
 
     private String relName;
@@ -55,32 +46,44 @@ public class RegisterActivity extends AppCompatActivity {
     private String tel;
     private String password1;
     private String password2;
-    private List<PoliceStationInfo.PoliceStation> result;
-    private List<String> policeStationList;
+//    private List<PoliceStationInfo.PoliceStation> result =new ArrayList<>();
+    private List<String> policeStationList =new ArrayList<>();
     private ArrayAdapter<String> spinnerAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        ButterKnife.bind(this);
-        initdata();
+        initView();
+        initEvent();
+    }
+
+
+    private void initView() {
+        username= (EditText) findViewById(R.id.username);
+        policeNumber= (EditText) findViewById(R.id.police_number);
+        phoneNumber= (EditText) findViewById(R.id.phone_number);
+        passWord1= (EditText) findViewById(R.id.password);
+        passWord2= (EditText) findViewById(R.id.password2);
+        spinner= (Spinner) findViewById(R.id.policid);
+        butRegiet= (Button) findViewById(R.id.but_register);
+
     }
 
     private void initdata() {
-        policeStationList = new ArrayList<>();
         relName = username.getText().toString();
         userid = policeNumber.getText().toString();
         tel = phoneNumber.getText().toString();
         password1 = passWord1.getText().toString();
         password2 = passWord2.getText().toString();
-        getPoliceStation();
-        for (PoliceStationInfo.PoliceStation policeStation : result) {
-            policeStationList.add(policeStation.getPoliceStation());
-        }
-        spinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,policeStationList);
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(spinnerAdapter);
+//        getPoliceStation();
+//        for (PoliceStationInfo.PoliceStation policeStation : result) {
+//            policeStationList.add(policeStation.getPoliceStation());
+//        }
+//        spinnerAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,policeStationList);
+//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(spinnerAdapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -96,31 +99,26 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void getPoliceStation() {
-        OkHttpUtils.get()
-                .url(POLICE_STATION)
-                .build()
-                .execute(new OKCall<PoliceStationInfo>(PoliceStationInfo.class) {
+    private void initEvent() {
+//        派出所选择
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-                        Logger.d(e.getMessage());
-                        Toast.makeText(RegisterActivity.this, "失败", Toast.LENGTH_SHORT).show();
-                    }
+            }
 
-                    @Override
-                    public void onResponse(PoliceStationInfo response, int id) {
-                        result = response.getPoliceStationList();
-                    }
-                });
-    }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
-    @OnClick({R.id.policid, R.id.but_login})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.policid:
-                break;
-            case R.id.but_login:
+            }
+        });
+
+//        注册
+        butRegiet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initdata();
+                Logger.d(relName+userid+policeid+tel+password1+password2);
                 if (checkInput(relName, userid, policeid, tel, password1, password2)) {
                     OkHttpUtils.get()
                             .url(REGISTER)
@@ -149,9 +147,31 @@ public class RegisterActivity extends AppCompatActivity {
                             });
 
                 }
-                break;
-        }
+
+            }
+        });
+
     }
+
+
+//    private void getPoliceStation() {
+//        OkHttpUtils.get()
+//                .url(POLICE_STATION)
+//                .build()
+//                .execute(new OKCall<PoliceStationInfo>(PoliceStationInfo.class) {
+//
+//                    @Override
+//                    public void onError(Call call, Exception e, int id) {
+//                        Logger.d(e.getMessage());
+//                        Toast.makeText(RegisterActivity.this, "失败", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onResponse(PoliceStationInfo response, int id) {
+//                        result = response.getPoliceStationList();
+//                    }
+//                });
+//    }
 
     /*
      *检查输入

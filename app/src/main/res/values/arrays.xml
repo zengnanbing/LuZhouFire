@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="policeStation">
+        <item>所在派出所</item>
+        <item>泸州市公安局纳溪区分局安富派出所</item>
+        <item>泸州市公安局纳溪区分局白节派出所</item>
+        <item>泸州市公安局纳溪区分局打古派出所</item>
+        <item>泸州市公安局纳溪区分局大渡派出所</item>
+        <item>泸州市公安局纳溪区分局丰乐派出所</item>
+        <item>泸州市公安局纳溪区分局合面派出所</item>
+        <item>泸州市公安局纳溪区分局护国派出所</item>
+        <item>泸州市公安局纳溪区分局龙车派出所</item>
+        <item>泸州市公安局纳溪区分局棉花坡派出所</item>
+        <item>泸州市公安局纳溪区分局渠坝派出所</item>
+        <item>泸州市公安局纳溪区分局上马派出所</item>
+        <item>泸州市公安局纳溪区分局天仙派出所</item>
+        <item>泸州市公安局纳溪区分局新乐派出所</item>
+        <item>泸州市公安局纳溪区分局永宁派出所</item>
+        <item>泸州市公安局江阳区分局北城派出所</item>
+        <item>泸州市公安局江阳区分局龙透关派出所</item>
+        <item>泸州市公安局江阳区分局北城派出所</item>
+        <item>泸州市公安局江阳区分局南城派出所</item>
+        <item>泸州市公安局江阳区分局大山坪派出所</item>
+        <item>泸州市公安局江阳区分局治安管理大队</item>
+        <item>泸州市公安局江阳区分局蓝田派出所</item>
+        <item>泸州市公安局江阳区分局茜草派出所</item>
+        <item>泸州市公安局江阳区分局泰安派出所</item>
+        <item>泸州市公安局江阳区分局分水岭派出所</item>
+        <item>泸州市公安局江阳区分局江北派出所</item>
+        <item>泸州市公安局江阳区分局况场派出所</item>
+        <item>泸州市公安局江阳区分局丹林派出所</item>
+        <item>泸州市公安局江阳区分局黄舣派出所</item>
+        <item>泸州市公安局江阳区分局华阳派出所</item>
+        <item>泸州市公安局江阳区分局方山派出所</item>
+        <item>泸州市公安局江阳区分局张坝景区派出所</item>
+        <item>泸州市公安局江阳区分局石寨派出所</item>
+        <item>泸州市公安局江阳区分局通滩派出所</item>
+        <item>泸州市公安局江阳区分局邻玉派出所</item>
+        <item>泸州市公安局江阳区分局弥陀派出所</item>
+    </string-array>
+</resources>
