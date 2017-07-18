@@ -217,7 +217,7 @@ public class HomeFragment extends Fragment {
 //                          缓存数据
                             Gson gs = new Gson();
                             String out = gs.toJson(response);
-                            // 获取SD卡路径
+//                             获取SD卡路径
                             String path = FileUtils.getPath();
 
                             switch (which) {
